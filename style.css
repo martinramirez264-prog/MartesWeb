@@ -1,0 +1,81 @@
+/* CLASE 5 - FLEXBOX - CONTENEDOR LÍMITE - MEDIA QUERIES */     
+
+.catalogo{ /* Padre */
+    display: flex; /* "ENCENCER" EL FLEXBOX*/
+    flex-wrap: wrap; /* APLICA - ENROLLAR - SUPERPOSICIÓN */
+    justify-content: space-evenly; /* Centrar dinamicamente los hijos del flexbox */
+    margin: 0px 15%; /* Mini contenedor límite en el catalogo */
+}
+
+.card{ /* Hijos */ 
+    color: hwb(0, 17%, 83%); 
+    background-color: rgb(255, 201, 126);
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    height: 300px; /* TODAS MIS CARDS TIENEN 300PX DE ALTO + align items desde el catalogo es inncecesario */
+    text-align: center;
+    font-size: 75%; /* tamaño de fuente dinamica para que no se rompa */
+    /* CADA CARD, ADEMÁS DE SER HIJO DE CATALOGO, DENTRO , TIENE SU PROPIO FLEXBOX */
+    display: flex; /* ENCIENDO UN FLEXBOX INDIVIDUAL EN CADA CARD */
+    flex-direction: column; /* LO HAGO CON ORIENTACIÓN VERTICAL */
+    align-items: center; /* ORGANIZA HORIZONTALMENTE */
+    justify-content: space-between; /* ORGANIZA VERTICALMENTE    */
+}
+
+/* 
+  CONTENEDOR LÍMITE PARA 
+    - LIMITAR EL ANCHO DE MI CONTENIDO
+    - Y FACILITAR LA LECTURA DE MI PÁGINA 
+    - NO SOLO SIRVE PARA TEXTO, SIRVEN PARA TODO EL CONTENIDO PRINCIPAL DE MI PÁGINA.
+*/
+
+.contenedorLimite{
+    margin: 0px 15%;
+} 
+
+
+strong{
+    background-color: rgb(154, 157, 255);
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+#tituloWeb{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 50px;
+   font-weight: 100;
+   text-decoration: underline;
+   text-transform: capitalize;
+   word-spacing: 100px;
+   font-style: italic;
+   text-align: center;
+} 
+
+#parrafoWeb{
+    line-height: 30px;
+    /* letter-spacing: 3px;*/
+    text-align: justify;
+}
+
+/* 
+media queries
+BLOQUES DE CC - REGLAS DE CSS QUE 
+- SOLO SE ACTIVAN CUANDO TENGO X TAMAÑO ANCHO DE PANTALLA
+ */
+
+@media (max-width: 992px){
+    body{background-color: rgb(255, 247, 0);}
+    .contenedorLimite{margin: 0px;} 
+}
+
+@media (max-width: 760px){
+   body{background-color: red;}    
+}
+
+@media (max-width: 576px){
+    body{background-color: rgb(13, 0, 255);}    
+    /* ACÁ NO NECESITO CONTENEDOR LÍMITE */
+}
